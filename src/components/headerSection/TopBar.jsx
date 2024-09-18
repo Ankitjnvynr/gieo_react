@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt } from 'react-icons/fa';
 
 const ContactInfo = () => {
     return (
@@ -7,11 +7,11 @@ const ContactInfo = () => {
             <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4 space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
                     <FaEnvelope className="text-red-500" />
-                    <span className="text-gray-600">info@example.com</span>
+                    <span className="text-gray-600">gieogita@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <FaPhone className="text-red-500" />
-                    <span className="text-gray-600">+1 5589 55488 55</span>
+                    <FaPhoneAlt className="text-red-500" />
+                    <span className="text-gray-600">+91 93546-26999</span>
                 </div>
             </div>
 
