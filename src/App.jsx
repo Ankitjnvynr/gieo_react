@@ -3,6 +3,9 @@ import { useState } from 'react'
 import './App.css'
 import TopBar from '../src/components/headerSection/TopBar'
 import Navbar from './components/headerSection/Navbar'
+import Middle from './components/middleSection/Middle'
+import About from './components/about/About'
+import Flip from './components/Flip'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +14,9 @@ function App() {
     <>
       <TopBar />
       <Navbar />
+      <Middle />
+      <About/>
+      <Flip/>
     </>
   )
 }
