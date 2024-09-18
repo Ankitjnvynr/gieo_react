@@ -24,13 +24,21 @@ const Flip = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 relative">
+    <div
+      className="flex justify-center items-center min-h-screen bg-gray-100 relative"
+      style={{
+        backgroundImage: `url('/path-to-your-background-image.jpg')`, // Add the background image here
+        backgroundSize: 'cover', // Make sure the background covers the entire container
+        backgroundPosition: 'center', // Center the image
+        backgroundRepeat: 'no-repeat', // Prevent the image from repeating
+      }}
+    >
       {/* FlipPage Component */}
       <FlipPage
         ref={flipPageRef}
         orientation="horizontal"
         showHint
-        width={400}
+        width={1000}
         height={500}
         uncutPages
         animationDuration={500}
