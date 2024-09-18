@@ -1,9 +1,10 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/autoplay';  // Add this line to import autoplay styles
+import 'swiper/css/autoplay';
 import 'animate.css/animate.min.css';
 
 const Middle = () => {
@@ -15,10 +16,12 @@ const Middle = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 5000,
+          delay: 7000,  // Increased delay to give more pause time between slides
           disableOnInteraction: false,
         }}
+        speed={1000}  // Smooth transition speed (in milliseconds)
         loop={true}
+        modules={[Navigation, Pagination, Autoplay]}  // Include necessary modules
       >
         {/* Slide 1 */}
         <SwiperSlide>
