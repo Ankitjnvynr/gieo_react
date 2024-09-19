@@ -1,13 +1,14 @@
 import React from 'react'
 
-import {About, HeroSection} from '../components/'
+import {About, Flip, HeroSection, Services} from '../components/'
 
 function Home() {
   return (
     <>
     <HeroSection/>
     <About/>
-    
+    <Flip/>
+    <Services/>
     </>
   )
 }

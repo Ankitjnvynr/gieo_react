@@ -5,7 +5,7 @@ import TopBar from '../src/components/headerSection/TopBar'
 import Navbar from './components/headerSection/Navbar'
 import Middle from './components/middleSection/Middle'
 import About from './components/about/About'
-import Flip from './components/Flip'
+import Flip from './components/masikpatrika/Flip'
 import Services from './components/services/Services'
 
 function App() {
