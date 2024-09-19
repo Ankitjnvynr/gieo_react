@@ -1,21 +1,41 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    // Menu items as an array of objects
+    const menuItems = [
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+        { name: 'Services', path: '/services' },
+        { name: 'Bhakti Bhav', path: '/bhakti-bhav' },
+        { name: 'Contact', path: '/contact' }
+    ];
+
+    // Dropdown items
+    const dropdownItems = [
+        { name: 'Page 1', path: '/page1' },
+        { name: 'Page 2', path: '/page2' }
+    ];
+
     return (
-        <nav className="bg-white py-4 px-6 shadow-md">
+        <nav className="bg-white/[0.7] z-30 py-4 px-6 shadow-md sticky top-0">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-2xl font-bold text-yellow-700">GIEO GITA</div>
+                <div className="text-2xl font-bold text-yellow-700">
+                    <img className='w-[70px] mt-2' src="public/logo.png" alt="Logo" />
+                </div>
 
                 {/* Menu */}
                 <div className="hidden md:flex space-x-8 items-center">
-                    <a href="/" className="text-red-500">Home</a>
-                    <a href="/" className="text-gray-700 hover:text-red-500">About</a>
-                    <a href="/" className="text-gray-700 hover:text-red-500">Services</a>
-                    <a href="/" className="text-gray-700 hover:text-red-500">Bhakti bhav</a>
+                    {/* Map through menuItems array */}
+                    {menuItems.map((item) => (
+                        <Link key={item.name} to={item.path} className={item.name === 'Home' ? 'text-red-500' : 'text-gray-700 hover:text-red-500'}>
+                            {item.name}
+                        </Link>
+                    ))}
 
                     {/* Dropdown for Our Pages */}
                     <div className="relative group">
@@ -23,18 +43,20 @@ const Navbar = () => {
                             Our Pages <FaChevronDown className="ml-1" />
                         </button>
                         <div className="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-lg rounded-md w-40">
-                            <a href="/" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Page 1</a>
-                            <a href="/" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Page 2</a>
+                            {/* Map through dropdownItems array */}
+                            {dropdownItems.map((dropdown) => (
+                                <Link key={dropdown.name} to={dropdown.path} className="block px-4 py-2 text-gray-700 hover:bg-gray-200">
+                                    {dropdown.name}
+                                </Link>
+                            ))}
                         </div>
                     </div>
-
-                    <a href="/" className="text-gray-700 hover:text-red-500">Contact</a>
                 </div>
 
                 {/* Join Button */}
-                <a href="/" className="hidden md:inline-block border border-red-500 text-red-500 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition">
+                <Link to="/join" className="hidden md:inline-block border border-red-500 text-red-500 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition">
                     Join Gieogita
-                </a>
+                </Link>
 
                 {/* Mobile Menu Button */}
                 <button className="md:hidden text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -47,15 +69,16 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="md:hidden mt-4 space-y-2">
-                    <a href="/" className="block text-red-500">Home</a>
-                    <a href="/" className="block text-gray-700 hover:text-red-500">About</a>
-                    <a href="/" className="block text-gray-700 hover:text-red-500">Services</a>
-                    <a href="/" className="block text-gray-700 hover:text-red-500">Bhakti bhav</a>
-                    <a href="/" className="block text-gray-700 hover:text-red-500">Our Pages</a>
-                    <a href="/" className="block text-gray-700 hover:text-red-500">Contact</a>
-                    <a href="/" className="block border border-red-500 text-red-500 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition">
+                    {/* Map through menuItems array for mobile menu */}
+                    {menuItems.map((item) => (
+                        <Link key={item.name} to={item.path} className={item.name === 'Home' ? 'block text-red-500' : 'block text-gray-700 hover:text-red-500'}>
+                            {item.name}
+                        </Link>
+                    ))}
+                    <Link to="/our-pages" className="block text-gray-700 hover:text-red-500">Our Pages</Link>
+                    <Link to="/join" className="block border border-red-500 text-red-500 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition">
                         Join Gieogita
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>

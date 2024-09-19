@@ -6,6 +6,7 @@ import Navbar from './components/headerSection/Navbar'
 import Middle from './components/middleSection/Middle'
 import About from './components/about/About'
 import Flip from './components/Flip'
+import HeroSection from './components/hero/HeroSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,8 @@ function App() {
     <>
       <TopBar />
       <Navbar />
-      <Middle />
+      <HeroSection/>
+      {/* <Middle /> */}
       <About/>
       <Flip/>
     </>

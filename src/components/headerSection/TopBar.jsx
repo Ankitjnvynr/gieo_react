@@ -2,7 +2,7 @@ import { FaEnvelope, FaPhone, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn,
 
 const ContactInfo = () => {
     return (
-        <div className="flex flex-col sm:flex-row justify-between items-center py-4 px-6 bg-gray-100">
+        <div className="flex z-10 flex-col sm:flex-row justify-between items-center py-4 px-6 bg-gray-100/[0.6]">
             {/* Email and Phone Section */}
             <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4 space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
