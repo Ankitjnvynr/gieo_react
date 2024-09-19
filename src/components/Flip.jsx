@@ -25,11 +25,11 @@ const Flip = () => {
 
   return (
     <div
-      className="flex justify-center items-center min-h-screen bg-gray-100 relative"
+      className="flex justify-center items-center min-h-screen bg-white-100 relative"
       style={{
-        backgroundImage: `url('/path-to-your-background-image.jpg')`, // Add the background image here
-        backgroundSize: 'cover', // Make sure the background covers the entire container
-        backgroundPosition: 'center', // Center the image
+        backgroundImage: `url('public/img/png-clipart-peafowl-feather-peacock-feather-background-animals-photography-thumbnail-removebg-preview.png')`, // Add the background image here
+        backgroundSize: '600px 200px;', // Make sure the background covers the entire container
+        backgroundPosition: 'right mx-3 my-2', // Center the image
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
       }}
     >
@@ -38,7 +38,7 @@ const Flip = () => {
         ref={flipPageRef}
         orientation="horizontal"
         showHint
-        width={1000}
+        width={800}
         height={500}
         uncutPages
         animationDuration={500}
